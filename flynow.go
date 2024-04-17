@@ -53,12 +53,12 @@ func main() {
 
 // Print a formatted table, showing the resulting flight options
 func printResults(flightOptions []pricing.FlightForPurchase) {
-	fmt.Printf("%s\t%s\t%s\t\t%s\t\t%s\n", "From", "To", "Departing", "Arriving", "Price")
-	fmt.Println("______________________________________________________________________")
+	fmt.Printf("%s\t%s\t%s\t%s\t\t%s\t\t%s\n", "Flight", "From", "To", "Departing", "Arriving", "Price")
+	fmt.Println("________________________________________________________________________________")
 
 	for _, f := range flightOptions {
-		fmt.Printf("%s\t%s\t%s\t%s\t%s\n", f.Origin, f.Destination, f.Departure.Format("2006-01-02 15:04"), f.Arrival.Format("2006-01-02 15:04"), f.GetFormattedPrice())
+		fmt.Printf("%s\t%s\t%s\t%s\t%s\t%s\n", f.FlightNumber, f.Origin, f.Destination, f.Departure.Format("2006-01-02 15:04"), f.Arrival.Format("2006-01-02 15:04"), f.GetFormattedPrice())
 	}
 
-	fmt.Println("______________________________________________________________________")
+	fmt.Println("________________________________________________________________________________")
 }
